@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHead from '@/components/PageHead';
 import { FORUMS } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Forums of Practice', description: 'Courts, tribunals and authorities before which Grover Law Offices appears.' };
+export const metadata: Metadata = pageMeta({ path: '/forums', title: 'Forums of Practice', description: 'Courts, tribunals and authorities before which Grover Law Offices appears.' });
 
 export default function Forums() {
   return (

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHead from '@/components/PageHead';
 import { PRINCIPLES, FIRM } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'The Firm', description: 'About Grover Law Offices, its practice and its approach.' };
+export const metadata: Metadata = pageMeta({ path: '/firm', title: 'The Firm', description: 'About Grover Law Offices, its practice and its approach.' });
 
 export default function Firm() {
   return (

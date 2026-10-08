@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { pageMeta } from '@/lib/seo';
 import PageHead from '@/components/PageHead';
 import { PRACTICE_AREAS } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Areas of Practice', description: 'Litigation, corporate advisory, commercial transactions and RERA consultancy.' };
+export const metadata: Metadata = pageMeta({ path: '/practice-areas', title: 'Areas of Practice', description: 'Litigation, corporate advisory, commercial transactions and RERA consultancy.' });
 
 export default function Areas() {
   return (

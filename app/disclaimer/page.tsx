@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHead from '@/components/PageHead';
 import { DISCLAIMER } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Acknowledgement & Disclaimer' };
+export const metadata: Metadata = pageMeta({ path: '/disclaimer', title: 'Acknowledgement & Disclaimer', description: 'Acknowledgement and disclaimer for the Grover Law Offices website under Bar Council of India Rule 36.' });
 
 export default function Disclaimer() {
   return (

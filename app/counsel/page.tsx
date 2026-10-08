@@ -1,12 +1,21 @@
 import type { Metadata } from 'next';
+import { pageMeta, SITE, ORG_ID } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 import PageHead from '@/components/PageHead';
 import Logo from '@/components/Logo';
 
-export const metadata: Metadata = { title: 'Counsel', description: 'Vaibhav Grover, Managing Counsel and Founder, Grover Law Offices.' };
+export const metadata: Metadata = pageMeta({ path: '/counsel', title: 'Counsel', description: 'Vaibhav Grover, Managing Counsel and Founder, Grover Law Offices.' });
+
+const AREAS_OF_WORK = ['Commercial advisory', 'Regulatory compliance', 'Contract drafting and negotiation', 'Employment-related advisory', 'Dispute resolution and litigation strategy'];
 
 export default function Counsel() {
   return (
     <>
+      <JsonLd data={{
+        '@context': 'https://schema.org', '@type': 'Person', '@id': `${SITE}/counsel#person`, name: 'Vaibhav Grover',
+        jobTitle: 'Managing Counsel and Founder', url: `${SITE}/counsel`, worksFor: { '@id': ORG_ID },
+        knowsAbout: AREAS_OF_WORK,
+      }} />
       <PageHead crumbs={[{ label: 'Counsel' }]} title="Vaibhav Grover" lead="Managing Counsel and Founder" />
       <section className="sec">
         <div className="wrap split">
@@ -19,7 +28,7 @@ export default function Counsel() {
             </div>
             <h2 className="h-md" style={{ margin: '3rem 0 1.5rem' }}>Areas of Work</h2>
             <ul className="rows">
-              {['Commercial advisory', 'Regulatory compliance', 'Contract drafting and negotiation', 'Employment-related advisory', 'Dispute resolution and litigation strategy'].map((s) => (<li key={s}>{s}</li>))}
+              {AREAS_OF_WORK.map((s) => (<li key={s}>{s}</li>))}
             </ul>
           </div>
         </div>

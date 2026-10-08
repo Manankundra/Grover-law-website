@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHead from '@/components/PageHead';
 import { FIRM } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Privacy' };
+export const metadata: Metadata = pageMeta({ path: '/privacy', title: 'Privacy', description: 'How Grover Law Offices handles personal information submitted through this website.' });
 
 export default function Privacy() {
   return (

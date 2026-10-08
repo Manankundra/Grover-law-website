@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { FIRM, PRACTICE_AREAS, FORUMS } from '@/lib/data';
+import { pageMeta } from '@/lib/seo';
+
+export const metadata = pageMeta({ path: '/', description: 'Grover Law Offices, Advocates & Consultants, New Delhi. Information on the Law Office, its areas of practice and the forums before which it appears.' });
 
 export default function Home() {
   return (

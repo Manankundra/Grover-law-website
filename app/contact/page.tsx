@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import { pageMeta } from '@/lib/seo';
 import PageHead from '@/components/PageHead';
 import EnquiryForm from '@/components/EnquiryForm';
 import { FIRM } from '@/lib/data';
 
-export const metadata: Metadata = { title: 'Contact', description: 'Offices and correspondence details of Grover Law Offices, New Delhi.' };
+export const metadata: Metadata = pageMeta({ path: '/contact', title: 'Contact', description: 'Offices and correspondence details of Grover Law Offices, New Delhi.' });
 
 export default function Contact() {
   return (
